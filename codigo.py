@@ -136,7 +136,7 @@ def gerar_relatorio():
 
         import csv
         import os
-from datetime import datetime
+        from datetime import datetime
 
         # Cria o CSV
         nome_arquivo = f"seriehistorica{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
