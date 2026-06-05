@@ -56,7 +56,7 @@ def on_message(client, userdata, msg):
         print(f"[ERRO] {e}")
     finally:
         if conn:
-  release_db(conn)
+            release_db(conn)
 
 mqtt_client = mqtt.Client()
 mqtt_client.on_connect = on_connect
