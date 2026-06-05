@@ -1,0 +1,32 @@
+CREATE DATABASE aquatrack;
+CREATE USER admin WITH PASSWORD 'Aquatrack123!';
+GRANT ALL PRIVILEGES ON DATABASE aquatrack TO admin;
+CREATE TABLE reservatorios (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100),
+    localizacao VARCHAR(200),
+    capacidade_litros NUMERIC
+);
+CREATE TABLE leituras_agua (
+    id SERIAL PRIMARY KEY,
+    reservatorio_id INTEGER REFERENCES reservatorios(id),
+    tipo_sensor VARCHAR(50),
+    valor NUMERIC(10,3),
+    timestamp TIMESTAMPTZ DEFAULT NOW()
+);
+CREATE TABLE parametros_limite (
+    id SERIAL PRIMARY KEY,
+    tipo_sensor VARCHAR(50),
+    valor_minimo NUMERIC,
+    valor_maximo NUMERIC
+);
+CREATE TABLE inspecoes (
+    id SERIAL PRIMARY KEY,
+    reservatorio_id INTEGER REFERENCES reservatorios(id),
+    data_inspecao DATE,
+    tecnico VARCHAR(100),
+    observacoes TEXT,
+    arquivo_s3_key VARCHAR(300)
+);
+INSERT INTO reservatorios (nome, localizacao, capacidade_litros) 
+VALUES ('Reservatorio 01', 'Belem-PA', 50000);
