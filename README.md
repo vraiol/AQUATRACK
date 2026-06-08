@@ -44,10 +44,10 @@ pip install flask paho-mqtt boto3
 Rode o script principal para ligar a interface Web e a conexão de escuta do MQTT:
 
 ```bash
-python codigo.py
+sudo python3 app.py
 ```
 
-O painel ficará acessível no seu navegador pelo endereço que for gerado no próximo login feito no AWS EC2 onde nas configurações da instância do backend fica disponível o ip público que deverá ser usado para acessar o painel dashboard.
+O painel ficará acessível no seu navegador pelo endereço que for gerado no próximo login feito no AWS EC2 onde nas configurações da instância do backend fica disponível o ip público que deverá ser usado para acessar o painel dashboard. 
 
 ### 3. Iniciar a Simulação de Dados
 
