@@ -3,7 +3,7 @@ import json
 import time
 import random
 
-BROKER_HOST = "13.220.161.147"  # IP público da EC2 broker
+BROKER_HOST = "35.174.3.248"  # IP público da EC2 broker
 RESERVATORIO_ID = 1
 INTERVALO = 30  # segundos entre cada envio
 

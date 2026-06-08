@@ -7,23 +7,24 @@ O **AquaTrack** é um sistema completo para monitoramento em tempo real de reser
 - **Dashboard em Tempo Real:** Interface web elegante e responsiva para visualização do estado dos reservatórios com gráficos atualizados.
 - **Integração IoT (MQTT):** Leitura contínua de dados de sensores via broker MQTT hospedado na nuvem (AWS EC2).
 - **Simulador de Sensores:** Script para gerar dados variados de qualidade da água (ideal para simulações e testes de estresse).
-- **Armazenamento em Banco de Dados:** Gravação persistente das leituras utilizando SQLite.
+- **Armazenamento em Banco de Dados:** Gravação persistente das leituras utilizando PostgreSQL.
 - **Integração com a Nuvem (AWS S3):** Geração de relatórios completos em `.csv` com o histórico de leituras e upload automático para um bucket na AWS.
 - **Sistema de Alertas Dinâmico:** Identificação imediata de valores que fujam dos padrões esperados (por exemplo, pH fora da Portaria 5/2017).
 
 ## 🛠️ Tecnologias Utilizadas
 
 - **Backend:** Python, Flask
-- **Banco de Dados:** SQLite
+- **Banco de Dados:** PostgreSQL
 - **IoT & Mensageria:** MQTT (Biblioteca `paho-mqtt`)
 - **Frontend:** HTML, CSS, JavaScript Vanilla, Chart.js
 - **Cloud (AWS):** EC2 (Broker MQTT) e S3 (Buckets para armazenamento Boto3)
+- **Acesso Remoto:** PuTTY (conexão SSH ao servidor EC2 na AWS)
 
 ## 📁 Estrutura de Arquivos
 
 - `codigo.py`: Aplicação central (Servidor Flask), incluindo as rotas da API, regras de banco de dados, cliente MQTT e conexão Boto3 com S3.
 - `simulador.py`: Script avulso que publica dados aleatórios no Broker simulando um reservatório em funcionamento.
-- `banco.db`: Banco de dados SQLite onde os registros e histórico de alertas são guardados.
+- `banco.db`: Arquivo de configuração local; os registros e histórico de alertas são persistidos no banco de dados PostgreSQL.
 
 ## ⚙️ Como Executar o Projeto
 
