@@ -25,6 +25,7 @@ O **AquaTrack** é um sistema completo para monitoramento em tempo real de reser
 - `codigo.py`: Aplicação central (Servidor Flask), incluindo as rotas da API, regras de banco de dados, cliente MQTT e conexão Boto3 com S3.
 - `simulador.py`: Script avulso que publica dados aleatórios no Broker simulando um reservatório em funcionamento.
 - `banco.db`: Arquivo de configuração local; os registros e histórico de alertas são persistidos no banco de dados PostgreSQL.
+- `labuser.ppk`: Chave privada no formato PuTTY (PPK) utilizada para autenticação SSH via PuTTY na instância EC2 da AWS.
 
 ## ⚙️ Como Executar o Projeto
 
